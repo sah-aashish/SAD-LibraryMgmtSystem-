@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Vivlix;
+namespace Vedas;
 
 final class Response
 {

@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Vivlix;
+namespace Vedas;
 
 final class Config
 {
@@ -11,7 +11,7 @@ final class Config
         self::$values = [
             'DB_HOST' => '127.0.0.1',
             'DB_PORT' => '3306',
-            'DB_NAME' => 'vivlix_library',
+            'DB_NAME' => 'vedas_library',
             'DB_USER' => 'root',
             'DB_PASS' => '',
             'APP_ENV' => 'development',

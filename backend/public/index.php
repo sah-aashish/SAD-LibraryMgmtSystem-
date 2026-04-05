@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-use Vivlix\Auth;
-use Vivlix\Config;
-use Vivlix\Database;
-use Vivlix\Request;
-use Vivlix\Response;
-use Vivlix\Validator;
+use Vedas\Auth;
+use Vedas\Config;
+use Vedas\Database;
+use Vedas\Request;
+use Vedas\Response;
+use Vedas\Validator;
 
 require_once dirname(__DIR__) . '/src/bootstrap.php';
 
