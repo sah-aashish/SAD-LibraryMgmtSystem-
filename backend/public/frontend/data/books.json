@@ -1,0 +1,10 @@
+[
+  { "id": "BK-101", "title": "JavaScript for Web Systems", "author": "Maya Sharma", "category": "Programming", "status": "Available", "shelf": "A-12" },
+  { "id": "BK-102", "title": "Modern Library Operations", "author": "R. Adhikari", "category": "Business", "status": "Issued", "shelf": "B-04" },
+  { "id": "BK-103", "title": "Introduction to HTML and CSS", "author": "Rina Paudel", "category": "Programming", "status": "Available", "shelf": "A-02" },
+  { "id": "BK-104", "title": "World History Essentials", "author": "A. Singh", "category": "History", "status": "Available", "shelf": "C-18" },
+  { "id": "BK-105", "title": "Scientific Thinking", "author": "S. Karki", "category": "Science", "status": "Issued", "shelf": "D-03" },
+  { "id": "BK-106", "title": "Classic Literature Review", "author": "N. Aryal", "category": "Literature", "status": "Available", "shelf": "E-09" },
+  { "id": "BK-107", "title": "Business Communication", "author": "P. Thapa", "category": "Business", "status": "Available", "shelf": "B-10" },
+  { "id": "BK-108", "title": "Applied Physics Handbook", "author": "D. KC", "category": "Science", "status": "Available", "shelf": "D-15" }
+]

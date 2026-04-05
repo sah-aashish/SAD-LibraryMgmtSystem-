@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vivlix library admin panel">
+  <title>Vivlix Admin Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section id="authScreen" class="auth-screen">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="presentation" focusable="false">
+            <path d="M10 18 L32 6 L54 18" class="stroke" />
+            <path d="M14 20 H50" class="stroke" />
+            <path d="M20 24 V48" class="stroke" />
+            <path d="M29 24 V48" class="stroke" />
+            <path d="M38 24 V48" class="stroke" />
+            <path d="M47 24 V48" class="stroke" />
+            <path d="M16 50 H48" class="stroke" />
+            <path d="M13 54 H51" class="stroke" />
+            <circle cx="32" cy="15" r="3.5" class="stroke-fill" />
+          </svg>
+        </div>
+        <div>
+          <strong>Vilvix</strong>
+          <p>Admin Authentication</p>
+        </div>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-auth-tab="login" type="button">Login</button>
+        <button class="auth-tab" data-auth-tab="register" type="button">Register</button>
+      </div>
+
+      <form id="loginForm" class="auth-form active">
+        <div class="field">
+          <label for="loginEmail">Email</label>
+          <input id="loginEmail" name="loginEmail" type="email" placeholder="admin@example.com">
+        </div>
+        <div class="field">
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" name="loginPassword" type="password" placeholder="Enter password">
+        </div>
+        <button class="btn btn-blue auth-submit" type="submit">Login</button>
+      </form>
+
+      <form id="registerForm" class="auth-form">
+        <div class="field">
+          <label for="registerName">Full Name</label>
+          <input id="registerName" name="registerName" type="text" placeholder="Admin User">
+        </div>
+        <div class="field">
+          <label for="registerEmail">Email</label>
+          <input id="registerEmail" name="registerEmail" type="email" placeholder="admin@example.com">
+        </div>
+        <div class="field">
+          <label for="registerPassword">Password</label>
+          <input id="registerPassword" name="registerPassword" type="password" placeholder="At least 8 characters">
+        </div>
+        <div class="field">
+          <label for="registerRole">Role</label>
+          <select id="registerRole" name="registerRole">
+            <option value="admin">Admin</option>
+            <option value="librarian">Librarian</option>
+          </select>
+        </div>
+        <button class="btn btn-blue auth-submit" type="submit">Register</button>
+      </form>
+
+      <div id="authMessage" class="auth-message"></div>
+    </div>
+  </section>
+
+  <div id="adminApp" class="admin-layout hidden">
+    <aside class="sidebar">
+      <div class="brand-row">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="presentation" focusable="false">
+            <path d="M10 18 L32 6 L54 18" class="stroke" />
+            <path d="M14 20 H50" class="stroke" />
+            <path d="M20 24 V48" class="stroke" />
+            <path d="M29 24 V48" class="stroke" />
+            <path d="M38 24 V48" class="stroke" />
+            <path d="M47 24 V48" class="stroke" />
+            <path d="M16 50 H48" class="stroke" />
+            <path d="M13 54 H51" class="stroke" />
+            <circle cx="32" cy="15" r="3.5" class="stroke-fill" />
+          </svg>
+        </div>
+        <strong>Vilvix</strong>
+      </div>
+
+      <div class="sidebar-search-wrap">
+        <input id="menuSearch" class="menu-search" type="text" placeholder="Search Menu">
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-link active" data-view="dashboard"><span class="nav-icon">&#8962;</span><span>Dashboard</span></a>
+        <a href="#" class="nav-link" data-view="books"><span class="nav-icon">&#9635;</span><span>Book Management</span></a>
+        <a href="#" class="nav-link" data-view="rooms"><span class="nav-icon">&#9649;</span><span>Room Management</span></a>
+        <a href="#" class="nav-link" data-view="users"><span class="nav-icon">&#128101;</span><span>User Management</span></a>
+        <a href="#" class="nav-link" data-view="issue"><span class="nav-icon">&#128214;</span><span>Issue/Return Book</span></a>
+        <a href="#" class="nav-link" data-view="search"><span class="nav-icon">&#8981;</span><span>Search</span></a>
+        <a href="#" class="nav-link" data-view="settings"><span class="nav-icon">&#9881;</span><span>Settings</span></a>
+      </nav>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" class="menu-button" aria-label="Menu">&#9776;</button>
+          <span class="crumb">Dashboard</span>
+        </div>
+        <div class="topbar-right">
+          <span class="user-chip"><span class="user-circle">&#9673;</span><span id="roleLabel">Admin User</span><span class="caret">&#9662;</span></span>
+          <button id="logoutButton" class="logout-button" type="button">Logout</button>
+        </div>
+      </header>
+
+      <section class="view active" data-view-panel="dashboard">
+        <div class="page-banner">
+          <h1>Librarian Dashboard</h1>
+        </div>
+
+        <div class="metric-grid">
+          <article class="metric-card"><strong id="metricBooks">0</strong><span>Total Books</span></article>
+          <article class="metric-card"><strong id="metricMembers">0</strong><span>Total Students</span></article>
+          <article class="metric-card"><strong id="metricOverdue">0</strong><span>Overdue Books</span></article>
+          <article class="metric-card"><strong id="metricPending">0</strong><span>Pending Reservations</span></article>
+          <article class="metric-card"><strong id="metricFines">RS 0.00</strong><span>Total Fines Collected</span></article>
+          <article class="metric-card"><strong id="metricOutstanding">RS 0.00</strong><span>Outstanding Fines</span></article>
+        </div>
+
+        <section class="panel chart-panel">
+          <div class="panel-title">Monthly Borrowing Trends</div>
+          <canvas id="trendCanvas" width="1200" height="280"></canvas>
+        </section>
+      </section>
+
+      <section class="view" data-view-panel="issue">
+        <div class="subtabs">
+          <button class="subtab active" data-subtab="issue-book" type="button">Issue Book</button>
+          <button class="subtab" data-subtab="return-book" type="button">Return Book</button>
+          <button class="subtab" data-subtab="history" type="button">History</button>
+        </div>
+
+        <div class="subview active" data-subview="issue-book">
+          <section class="panel form-panel">
+            <h2>Issue a New Book</h2>
+            <form id="issueBookForm" class="two-col-form">
+              <div class="field">
+                <label for="issueBookSelect">Book:</label>
+                <select id="issueBookSelect" name="issueBookSelect"></select>
+              </div>
+              <div class="field">
+                <label for="issueUserSelect">Issued To:</label>
+                <select id="issueUserSelect" name="issueUserSelect"></select>
+              </div>
+              <div class="field">
+                <label for="issueDate">Issue Date:</label>
+                <input id="issueDate" name="issueDate" type="date">
+              </div>
+              <div class="field">
+                <label for="returnDate">Return Date:</label>
+                <input id="returnDate" name="returnDate" type="date">
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-success" type="submit">Issue Book</button>
+              </div>
+            </form>
+            <div id="issueMessage" class="message-box"></div>
+          </section>
+
+          <section class="panel">
+            <h2>Reservations</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Book</th>
+                    <th>User</th>
+                    <th>Status</th>
+                    <th>Reserved At</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="reservationTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <div class="subview" data-subview="return-book">
+          <div class="toolbar">
+            <input id="returnSearchBook" type="text" placeholder="Search Book Title">
+            <input id="returnSearchUser" type="text" placeholder="Search Issued To">
+            <select id="returnStatusFilter">
+              <option value="all">All</option>
+              <option value="issued">Issued</option>
+              <option value="returned">Returned</option>
+            </select>
+          </div>
+
+          <section class="panel">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Book</th>
+                    <th>Issued To</th>
+                    <th>Issue Date</th>
+                    <th>Return Due Date</th>
+                    <th>New Renewed Date</th>
+                    <th>New Renewed Return Date</th>
+                    <th>Fine</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="issuedTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <div class="subview" data-subview="history">
+          <section class="panel">
+            <h2>Transaction History</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Member</th>
+                    <th>Book</th>
+                    <th>Action</th>
+                    <th>Issue Date</th>
+                    <th>Return Date</th>
+                    <th>Fine</th>
+                  </tr>
+                </thead>
+                <tbody id="historyTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="view" data-view-panel="settings">
+        <div class="subtabs settings-tabs">
+          <button class="subtab active" data-subtab="library-settings" type="button">Library Settings</button>
+        </div>
+        <div class="subview active" data-subview="library-settings">
+          <div class="settings-toolbar">
+            <button id="editSettingsBtn" class="btn btn-blue" type="button">Edit Settings</button>
+          </div>
+
+          <section class="settings-surface no-pad">
+            <table class="settings-table">
+              <tbody>
+                <tr><th>Quota</th><td id="settingQuota">5</td></tr>
+                <tr><th>Fine Amount</th><td id="settingFine">1.00</td></tr>
+                <tr><th>Min Fine Amount</th><td id="settingMinFine">10.00</td></tr>
+                <tr><th>Count Return Date as Fineable?</th><td id="settingFineable">Yes</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="settingsEditor" class="panel settings-editor hidden">
+            <form id="settingsForm" class="two-col-form">
+              <div class="field">
+                <label for="quotaInput">Quota</label>
+                <input id="quotaInput" name="quotaInput" type="number" min="1">
+              </div>
+              <div class="field">
+                <label for="fineAmountInput">Fine Amount</label>
+                <input id="fineAmountInput" name="fineAmountInput" type="number" min="0" step="0.01">
+              </div>
+              <div class="field">
+                <label for="minFineInput">Min Fine Amount</label>
+                <input id="minFineInput" name="minFineInput" type="number" min="0" step="0.01">
+              </div>
+              <div class="field">
+                <label for="fineableInput">Count Return Date as Fineable?</label>
+                <select id="fineableInput" name="fineableInput">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-blue" type="submit">Save Settings</button>
+              </div>
+            </form>
+            <div id="settingsMessage" class="message-box"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="view" data-view-panel="books">
+        <div class="page-banner">
+          <h1>Book Management</h1>
+        </div>
+        <section class="panel">
+          <form id="bookForm" class="two-col-form compact-form">
+            <div class="field">
+              <label for="bookTitle">Title</label>
+              <input id="bookTitle" name="bookTitle" type="text" placeholder="Book title">
+            </div>
+            <div class="field">
+              <label for="bookAuthor">Author</label>
+              <input id="bookAuthor" name="bookAuthor" type="text" placeholder="Author name">
+            </div>
+            <div class="field">
+              <label for="bookCategory">Category</label>
+              <select id="bookCategory" name="bookCategory">
+                <option value="">Select category</option>
+                <option value="Programming">Programming</option>
+                <option value="Science">Science</option>
+                <option value="Literature">Literature</option>
+                <option value="History">History</option>
+                <option value="Business">Business</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="bookShelf">Shelf</label>
+              <input id="bookShelf" name="bookShelf" type="text" placeholder="A-01">
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-blue" type="submit">Add Book</button>
+            </div>
+          </form>
+          <div id="bookMessage" class="message-box"></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>ID</th><th>Title</th><th>Author</th><th>Category</th><th>Status</th><th>Shelf</th></tr>
+              </thead>
+              <tbody id="bookTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" data-view-panel="users">
+        <div class="page-banner">
+          <h1>User Management</h1>
+        </div>
+        <section class="panel">
+          <p class="message-box">Users are created through the backend authentication flow. Register additional staff from the login screen or directly through the API.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Name</th><th>Email</th><th>Role</th></tr>
+              </thead>
+              <tbody id="memberTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" data-view-panel="search">
+        <div class="page-banner">
+          <h1>Search</h1>
+        </div>
+        <section class="panel">
+          <div class="toolbar single">
+            <input id="recordSearch" type="text" placeholder="Search books or members">
+          </div>
+          <ul id="searchResults" class="result-list"></ul>
+        </section>
+      </section>
+
+      <section class="view" data-view-panel="rooms">
+        <div class="page-banner">
+          <h1>Room Management</h1>
+        </div>
+        <section class="panel">
+          <h2>Reading Rooms</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Room</th><th>Capacity</th><th>Status</th><th>Supervisor</th></tr>
+              </thead>
+              <tbody id="roomTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <footer class="page-footer">Copyright &copy; 2025 Vilvix. All rights reserved.</footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

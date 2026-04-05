@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vivlix Library Management System public website">
+  <title>Vivlix | Smart Library Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a href="#home" class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">Vilvix</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#catalog">Catalog</a>
+        <a href="#resources">Resources</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-light" href="#member">Login</a>
+        <a class="btn btn-primary" href="#member">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-frame">
+        <div class="hero-grid">
+          <article class="hero-copy">
+            <h1>Discover a World of Knowledge</h1>
+            <p class="hero-text">
+              VILVIX Library Management System offers seamless access to thousands of books, journals, and digital resources. Explore, learn, and grow with our comprehensive collection.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#catalog">Browse Catalog</a>
+              <a class="btn btn-ghost" href="#about">Learn More</a>
+            </div>
+          </article>
+
+          <aside class="hero-card" aria-label="Library system preview">
+            <div class="hero-card-inner">
+              <div class="hero-card-top">
+                <div class="book-stack" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="hero-title-lockup">
+                  <strong>VILVIX</strong>
+                  <p>LIBRARY</p>
+                  <span>MANAGEMENT SYSTEM</span>
+                </div>
+                <div class="hero-orbs" aria-hidden="true">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </div>
+              </div>
+              <canvas id="usageCanvas" width="420" height="170" aria-label="Usage chart"></canvas>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="features">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Our Library Features</h2>
+          <p>Discover the tools and resources that make our library management system efficient and user-friendly.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon feature-icon-books" aria-hidden="true">
+              <svg viewBox="0 0 48 48" role="presentation">
+                <g transform="translate(7 8) rotate(18 14 14)">
+                  <rect x="5" y="3" width="20" height="7" rx="2" fill="#ef4444"></rect>
+                  <rect x="5" y="10" width="20" height="2" rx="1" fill="#334155"></rect>
+                  <rect x="8" y="5" width="12" height="1.8" rx="0.9" fill="#f8fafc"></rect>
+                  <rect x="8" y="7.6" width="9" height="1.8" rx="0.9" fill="#fde68a"></rect>
+
+                  <rect x="7" y="12" width="20" height="7" rx="2" fill="#3b82f6"></rect>
+                  <rect x="7" y="19" width="20" height="2" rx="1" fill="#334155"></rect>
+                  <rect x="10" y="14.1" width="11.5" height="1.8" rx="0.9" fill="#f8fafc"></rect>
+
+                  <rect x="9" y="21" width="20" height="7" rx="2" fill="#cbd5e1"></rect>
+                  <rect x="9" y="28" width="20" height="2" rx="1" fill="#64748b"></rect>
+                  <rect x="12" y="23.2" width="12" height="1.8" rx="0.9" fill="#ffffff"></rect>
+                </g>
+              </svg>
+            </div>
+            <h3>Extensive Collection</h3>
+            <p>Access over 50,000 books, journals, and digital resources across various subjects and disciplines.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon feature-icon-search" aria-hidden="true">
+              <svg viewBox="0 0 48 48" role="presentation">
+                <circle cx="20" cy="20" r="9" fill="#dbeafe" stroke="#94a3b8" stroke-width="2"></circle>
+                <path d="M26 26L35 35" stroke="#4b5563" stroke-width="4" stroke-linecap="round"></path>
+                <path d="M16 16C17.8 14.4 19.6 13.6 22 13.4" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+            </div>
+            <h3>Advanced Search</h3>
+            <p>Find exactly what you need with our powerful search engine that filters by author, title, and category.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon feature-icon-mobile" aria-hidden="true">
+              <svg viewBox="0 0 48 48" role="presentation">
+                <rect x="15" y="8" width="16" height="30" rx="3.5" fill="#111827"></rect>
+                <rect x="18" y="12" width="10" height="18" rx="1.5" fill="#2563eb"></rect>
+                <circle cx="23" cy="34" r="1.4" fill="#e5e7eb"></circle>
+                <rect x="20" y="15" width="6" height="2" rx="1" fill="#fbbf24"></rect>
+                <rect x="19" y="19" width="8" height="2" rx="1" fill="#34d399"></rect>
+                <rect x="19" y="23" width="8" height="2" rx="1" fill="#f472b6"></rect>
+              </svg>
+            </div>
+            <h3>Mobile Access</h3>
+            <p>Manage your library account, renew books, and access digital resources from any device with ease.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="container">
+        <div class="section-heading align-left">
+          <p class="eyebrow">Catalog</p>
+          <h2>Search the Library Collection</h2>
+          <p>This section demonstrates HTML forms, JavaScript search, tables, DOM updates, and JSON-based data loading.</p>
+        </div>
+
+        <form class="search-panel" id="catalogForm">
+          <div class="field">
+            <label for="searchInput">Keyword</label>
+            <input id="searchInput" name="search" type="text" placeholder="Search by title, author or category">
+          </div>
+          <div class="field">
+            <label for="categoryFilter">Category</label>
+            <select id="categoryFilter" name="category">
+              <option value="all">All Categories</option>
+              <option value="Programming">Programming</option>
+              <option value="Science">Science</option>
+              <option value="Literature">Literature</option>
+              <option value="History">History</option>
+              <option value="Business">Business</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="availabilityFilter">Availability</label>
+            <select id="availabilityFilter" name="availability">
+              <option value="all">All</option>
+              <option value="Available">Available</option>
+              <option value="Issued">Issued</option>
+            </select>
+          </div>
+          <div class="field action-field">
+            <button class="btn btn-primary" type="submit">Search Books</button>
+          </div>
+        </form>
+
+        <div class="catalog-meta">
+          <p id="catalogCount">Loading catalog...</p>
+          <p class="soft-text">Tip: search updates instantly while you type.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="catalog-table">
+            <thead>
+              <tr>
+                <th>Book ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Shelf</th>
+              </tr>
+            </thead>
+            <tbody id="catalogBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-accent" id="resources">
+      <div class="container resources-grid">
+        <article>
+          <div class="section-heading align-left">
+            <p class="eyebrow">Resources</p>
+            <h2>Library Notices and Media</h2>
+            <p>This block covers semantic content, audio, video, AJAX-style loading, and XML parsing.</p>
+          </div>
+          <div id="announcementList" class="announcement-list"></div>
+        </article>
+        <article class="media-panel">
+          <figure class="media-card">
+            <div class="media-placeholder"><span>Library Orientation Video</span></div>
+            <figcaption>Orientation overview for new users of the Vivlix system.</figcaption>
+          </figure>
+          <audio controls class="media-control"><source src="" type="audio/mpeg"></audio>
+          <video controls class="media-control" poster=""><source src="" type="video/mp4"></video>
+          <p class="soft-text">Audio and video tags are included for course coverage. Attach real media files later if needed.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="member">
+      <div class="container split-grid">
+        <article>
+          <div class="section-heading align-left">
+            <p class="eyebrow">Membership</p>
+            <h2>Register as a Member</h2>
+            <p>This form demonstrates client-side validation, events, cookies/local storage style behavior, and DOM feedback.</p>
+          </div>
+          <form id="memberForm" class="member-form" novalidate>
+            <div class="field"><label for="memberName">Full Name</label><input id="memberName" name="memberName" type="text" placeholder="Enter your full name"><small class="error" data-error-for="memberName"></small></div>
+            <div class="field"><label for="memberEmail">Email Address</label><input id="memberEmail" name="memberEmail" type="email" placeholder="name@example.com"><small class="error" data-error-for="memberEmail"></small></div>
+            <div class="field"><label for="memberPhone">Phone Number</label><input id="memberPhone" name="memberPhone" type="tel" placeholder="98XXXXXXXX"><small class="error" data-error-for="memberPhone"></small></div>
+            <div class="field"><label for="memberType">Member Type</label><select id="memberType" name="memberType"><option value="">Select type</option><option value="Student">Student</option><option value="Teacher">Teacher</option><option value="Researcher">Researcher</option></select><small class="error" data-error-for="memberType"></small></div>
+            <div class="field"><label for="memberMessage">Purpose</label><textarea id="memberMessage" name="memberMessage" rows="4" placeholder="Why do you want to join Vivlix?"></textarea></div>
+            <div class="inline-check"><input id="agreeRules" name="agreeRules" type="checkbox"><label for="agreeRules">I agree to follow library issue and return rules.</label></div>
+            <small class="error" data-error-for="agreeRules"></small>
+            <button class="btn btn-primary" type="submit">Create Membership Request</button>
+          </form>
+          <div id="memberResult" class="result-box" aria-live="polite"></div>
+        </article>
+
+        <aside class="info-panel">
+          <h3>Borrowing Policy Snapshot</h3>
+          <ol>
+            <li>Students may borrow up to 3 books for 14 days.</li>
+            <li>Teachers may borrow up to 5 books for 21 days.</li>
+            <li>Late returns may generate a daily fine.</li>
+          </ol>
+          <h3>Quick Facts</h3>
+          <dl>
+            <dt>Opening Hours</dt>
+            <dd>Sunday to Friday, 7:00 AM to 6:00 PM</dd>
+            <dt>Support Email</dt>
+            <dd>support@vivlix.local</dd>
+            <dt>Admin Access</dt>
+            <dd><a href="../admin panel/index.html">Open Admin Panel</a></dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-light" id="about">
+      <div class="container split-grid">
+        <article>
+          <div class="section-heading align-left">
+            <p class="eyebrow">About Vivlix</p>
+            <h2>Built Around Real Library Workflows</h2>
+            <p>Vivlix focuses on the core activities of a library management program: adding books, searching titles, registering members, issuing books, receiving returns, and recording fines.</p>
+          </div>
+          <ul class="timeline">
+            <li>Catalog management for books and academic materials</li>
+            <li>Student and member information handling</li>
+            <li>Borrow and return transaction monitoring</li>
+            <li>Fine tracking and status reporting</li>
+          </ul>
+        </article>
+        <article class="stats-panel">
+          <div class="stat-box"><strong>98%</strong><span>Search accuracy with category filters</span></div>
+          <div class="stat-box"><strong>1 min</strong><span>Average time to issue a book in the demo flow</span></div>
+          <div class="stat-box"><strong>100%</strong><span>Responsive layout ready for desktop and mobile</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container split-grid">
+        <article>
+          <div class="section-heading align-left">
+            <p class="eyebrow">Contact</p>
+            <h2>Send a Library Message</h2>
+          </div>
+          <form id="contactForm" class="member-form" novalidate>
+            <div class="field"><label for="contactSubject">Subject</label><input id="contactSubject" name="contactSubject" type="text" placeholder="Request subject"><small class="error" data-error-for="contactSubject"></small></div>
+            <div class="field"><label for="contactEmail">Your Email</label><input id="contactEmail" name="contactEmail" type="email" placeholder="you@example.com"><small class="error" data-error-for="contactEmail"></small></div>
+            <div class="field"><label for="contactMessage">Message</label><textarea id="contactMessage" name="contactMessage" rows="5" placeholder="Type your message here"></textarea><small class="error" data-error-for="contactMessage"></small></div>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </form>
+          <div id="contactResult" class="result-box" aria-live="polite"></div>
+        </article>
+        <aside class="contact-card">
+          <h3>Library Contact Details</h3>
+          <p><strong>Address:</strong> Central Academic Library, Knowledge Avenue</p>
+          <p><strong>Phone:</strong> +977-9800000000</p>
+          <p><strong>Email:</strong> info@vivlix.local</p>
+          <p><strong>Admin Panel:</strong> <a href="../admin panel/index.html">Manage library data</a></p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <div>
+        <strong>Vivlix</strong>
+        <p>Smart library management for borrowing, returns, members, and reports.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="#home">Home</a>
+        <a href="#catalog">Catalog</a>
+        <a href="#member">Membership</a>
+        <a href="../admin panel/index.html">Admin</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
